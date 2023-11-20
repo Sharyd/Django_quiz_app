@@ -1,0 +1,14 @@
+{% if quiz.icon %}
+              <!-- Determine the CSS class based on quiz title -->
+         {% if quiz.title == "HTML" %}
+                  <img src="{{ quiz.icon.url }}" class="html" alt="{{ quiz.title }}">
+         {% elif quiz.title == "CSS" %}
+                  <img src="{{ quiz.icon.url }}" class="css" alt="{{ quiz.title }}">
+         {% elif quiz.title == "javascript" %}
+                  <img src="{{ quiz.icon.url }}" class="js" alt="{{ quiz.title }}">
+         {% elif quiz.title == "accessibility" %}
+                  <img src="{{ quiz.icon.url }}" class="access" alt="{{ quiz.title }}">
+         {% else %}
+                  <img src="{{ quiz.icon.url }}" class="quiz-icon" alt="{{ quiz.title }}">
+        {% endif %}
+{% endif %}

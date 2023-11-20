@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Quiz Completion
+{% endblock %}
+
+{% block css_files %}
+    <!-- Link to any specific CSS files for this page, if needed -->
+    <link rel="stylesheet" href="{% static 'quiz/index.css' %}">
+    <link rel="stylesheet" href="{% static 'quiz/quiz-completion.css' %}">
+    <link rel="stylesheet" href="{% static 'quiz/quiz-detail.css' %}">
+{% endblock %}
+
+{% block subject_type %}
+     <div class="subject-type">
+        {% include "./include/icons.html" with quiz=quiz %}
+        <h2>{{ quiz.title }}</h2>
+    </div>
+{% endblock %}
+
+{% block content_left %}
+    <section class="content-left">
+    <h1 class="heading"> <span> Quiz completed </span> </br> You scored...</h1>
+    </section>
+{% endblock %}
+
+{% block content_right %}
+<section class="quiz-completion-container">
+    <div class="quiz-summary">
+        <div class="subject-type">
+            {% include "./include/icons.html" with quiz=quiz %}
+            <h2>{{ quiz.title }}</h2>
+        </div>
+        <div class="score-display">
+            <p class="score">{{score}}</p>
+            <span class="total">out of {{ total_questions }}</span>
+        </div>
+    </div>
+    <a href="{% url 'home-page' %}" class="button">Play Again</a>
+</section>
+{% endblock %}

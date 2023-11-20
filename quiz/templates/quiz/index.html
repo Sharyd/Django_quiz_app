@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'quiz/index.css' %}">
+{% endblock %}
+
+
+{% block subject_type %} 
+<!-- Existing content... -->
+{% endblock %}
+
+{% block content_left %}
+  <section class="content-left">
+    <h1 class="heading"><span> Welcome to the </span> </br> Developer Quiz!</h1>
+    <p> Pick a subject to get started. </p>
+  </section>
+{% endblock %}
+
+{% block content_right %}
+  <section class="content-right">
+    <ul>
+      {% for quiz in quizzes %}
+      <a href="{% url 'quiz_detail' quiz.id %}">
+        <li class="card">
+          {% include "./include/icons.html" %}
+          <h2>{{ quiz.title }}</h2>
+      </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

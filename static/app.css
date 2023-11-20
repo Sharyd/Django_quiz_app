@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Rubik:ital,wght@0,400;0,500;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-dark: #313e51;
+  --primary-light: #ffffff;
+  --secondary-dark: #3B4D66;
+  --secondary-light: #f4f6fa;
+  --tertiary-dark: #626c7f;
+  --tertiary-blue-light: #ABC1E1;
+  --primary-purple: #A729F5;
+  --success: #26d782;
+  --error: #EE5454;
+  
+
+  
+  --html: rgb(253, 242, 237);
+  --css: rgb(221, 252, 221);
+  --js: rgb(227, 225, 253);
+  --accessibility: rgb(245, 226, 253);
+}
+
+html {
+  font-family: 'Open Sans', 'Rubik', sans-serif;
+
+}
+
+body {
+  margin: 0;
+  margin: 0 auto;
+  max-width: 1160px;
+  height: 100vh;
+  display: flex;
+  align-items: end;
+  padding-left: 2rem ;
+  padding-right: 2rem ;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  background-position: top left;
+  background-size: cover;
+}
+p {
+  letter-spacing: 0.5px;
+  margin: 0;
+  font-style: italic;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  letter-spacing: 1px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-family: 'Rubik', sans-serif;
+}
+
+.container {
+
+  justify-content: center;
+  display: flex;
+  gap: 5rem;
+  flex-direction: row;
+  align-self: center;
+  width: 100%;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+}
+
+
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+body.dark-mode  .sun-icon, body.dark-mode .moon-icon  {
+  fill: var(--primary-light);
+}
+
+
+
+body {
+  background-image: url('/static/background/pattern-background-desktop-light.svg');
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+}
+
+/* Dark Mode Styles based on prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url('/static/background/pattern-background-desktop-dark.svg');
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+  }
+}
+
+/* Dark Mode Styles for manual toggle */
+body.dark-mode {
+  background-image: url('/static/background/pattern-background-desktop-dark.svg');
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+}
+
+/* Tablet Styles for Light Mode */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background-image: url('/static/background/pattern-background-tablet-light.svg');
+  }
+
+  /* Dark Mode for Tablet based on prefers-color-scheme */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-image: url('/static/background/pattern-background-tablet-dark.svg');
+    }
+  }
+
+  /* Dark Mode for Tablet for manual toggle */
+  body.dark-mode {
+    background-image: url('/static/background/pattern-background-tablet-dark.svg');
+  }
+}
+
+/* Mobile Styles for Light Mode */
+@media (max-width: 767px) {
+  body {
+    background-image: url('/static/background/pattern-background-mobile-light.svg');
+  }
+
+  /* Dark Mode for Mobile based on prefers-color-scheme */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-image: url('/static/background/pattern-background-mobile-dark.svg');
+    }
+  }
+
+  /* Dark Mode for Mobile for manual toggle */
+  body.dark-mode {
+    background-image: url('/static/background/pattern-background-mobile-dark.svg');
+  }
+}
+

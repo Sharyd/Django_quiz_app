@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}  {% endblock %}</title>
+        <link rel="stylesheet" href="{% static "app.css" %}" />
+        <link rel="stylesheet" href="{% static "switch-input.css" %}" />
+        
+
+
+        {% block css_files %} {% endblock %}
+  
+    </head>
+        <body>
+            <header>
+                <div>
+                    {% block subject_type %} {% endblock %}
+                </div>
+                <div class="switch-container">
+                  
+                    {% include "icons/sun-icon.html" %}
+                   
+                    <div class="switch">
+                    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                    </div>
+                    <div id="moon-icon" class="moon-icon">
+                    {% include "icons/moon-icon.html" %}
+                    </div>
+                </div>
+            </header>
+        <main class="container">
+         {% block content_left %} 
+         {% endblock %}
+
+         {% block content_right %} 
+         {% endblock %}
+        </main>
+
+
+        {% block js_files %} 
+      
+        {% endblock %}
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const currentTheme = localStorage.getItem('theme') || 'light';
+                if (currentTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                }
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleSwitch = document.getElementById('switch');
+                const currentTheme = localStorage.getItem('theme') || 'light';
+        
+                if (currentTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    toggleSwitch.checked = true;
+                }
+        
+                toggleSwitch.addEventListener('change', function() {
+                    const isDarkMode = document.body.classList.toggle('dark-mode');
+                    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                });
+            });
+        </script>
+        </body>
+</html>
