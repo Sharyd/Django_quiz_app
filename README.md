@@ -12,7 +12,7 @@ This Django Quiz App is a web application that allows users to take quizzes on v
 ## Technology Stack
 
 - **Backend**: Django
-- **Frontend**: HTML, CSS (Bootstrap for styling, if applicable)
+- **Frontend**: HTML, CSS
 - **Database**: SQLite (default), can be configured for PostgreSQL or MySQL
 - **Hosting**: AWS Elastic Beanstalk
 - **Static & Media Files**: AWS S3 (if applicable)
