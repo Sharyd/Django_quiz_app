@@ -32,3 +32,42 @@ These instructions will get you a copy of the project up and running on your loc
 - pip
 - virtualenv (optional)
 
+### Installation
+
+Clone the repository
+
+bash
+Copy code
+git clone https://github.com/your-username/your-quiz-app.git
+cd 
+Set up a virtual environment (recommended)
+
+```
+python -m venv venv
+source venv/bin/activate  # For Windows use `venv\Scripts\activate`
+```
+**Install dependencies**
+
+```pip install -r requirements.txt```
+
+**Apply migrations to create the database schema.**
+
+```
+python manage.py migrate
+```
+**Create an admin user**
+
+```
+python manage.py createsuperuser
+```
+**Collect static files**
+
+```
+python manage.py collectstatic
+```
+**Run the development server**
+
+```
+python manage.py runserver
+```
+
