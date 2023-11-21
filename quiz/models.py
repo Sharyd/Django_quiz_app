@@ -14,9 +14,7 @@ def validate_file_type(upload):
 
 class Quiz(models.Model):
     title = models.CharField(max_length=255)
-    icon = models.FileField(
-        upload_to="uploads/quiz_icons/", validators=[validate_file_type]
-    )
+    icon = models.FileField(upload_to="quiz_icons", validators=[validate_file_type])
 
     def __str__(self):
         return self.title

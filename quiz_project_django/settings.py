@@ -22,14 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-@4v)3u6%u^3*2%*=y(f178md-=*b8!@hpd*c_--4q9b-#288xo"
+SECRET_KEY = getenv("SECRET_KEY", "your_secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    "djangoquizapp-env.eba-qpf3xv2n.eu-north-1.elasticbeanstalk.com",
-    ".vercel.app",
     "*",
 ]
 
@@ -133,16 +131,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Add this line
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-MEDIA_ROOT = BASE_DIR / "/media/uploads"
+MEDIA_ROOT = BASE_DIR / "/uploads"
 MEDIA_URL = "/files/"
-# MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Add this line
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")  # Add this line
 
 
 # Default primary key field type

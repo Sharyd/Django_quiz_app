@@ -37,7 +37,7 @@ yarn-error.log
 
 # App-specific
 __pycache__/
-# db.sqlite3
+
 .env
 # server/static/
 result
@@ -46,3 +46,5 @@ server/static/
 site/
 .yarn/
 django_my_quiz/
+production.zip
+db.sqlite3
