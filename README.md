@@ -2,6 +2,11 @@
 
 This Django Quiz App is a web application that allows users to take quizzes on various topics.
 
+## Production User for Admin UI
+  - url: http://djangoquizapp-env-10.eba-zuszb39k.eu-north-1.elasticbeanstalk.com/admin/
+  - username: TestQuiz
+  - password: test123456*
+
 ## Features
 
   ## Admin UI
@@ -34,13 +39,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installation
 
-Clone the repository
+**Clone the repository**
 
-bash
-Copy code
-git clone https://github.com/your-username/your-quiz-app.git
-cd 
-Set up a virtual environment (recommended)
+```
+git clone https://github.com/Sharyd/Django_quiz_app.git
+```
+
+**Set up a virtual environment (recommended)**
 
 ```
 python -m venv venv
@@ -48,7 +53,9 @@ source venv/bin/activate  # For Windows use `venv\Scripts\activate`
 ```
 **Install dependencies**
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 **Apply migrations to create the database schema.**
 
