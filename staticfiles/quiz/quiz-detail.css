@@ -1,0 +1,127 @@
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.2rem ;
+    color: var(--secondary-dark);
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 20px; /* Adjust to vertically center the text */
+    margin-right: 10px;
+    /* Add other styling as needed, similar to your icons but without specific colors */
+}
+
+body.dark-mode .option-label span{
+    background-color: var(--secondary-light);
+    color: var(--tertiary-dark);
+   
+}
+
+body.dark-mode .option-label {
+    color: var(--secondary-light);
+}
+
+
+.subject-type {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.option-label span {
+    background-color: var(--secondary-light); 
+    padding: 0.8rem;
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    width: 100%;
+    gap: 1rem;
+}
+
+.button {
+    background-color: var(--primary-purple);
+    color: var(--primary-light);
+    width: 100%;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+    
+}
+
+
+
+.hidden-radio {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden ;
+    left: 9999px ;
+    height: 0;
+}
+
+.option-label input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.error-messages {
+    color: rgb(238, 120, 120);
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    font-weight: 500;
+
+}
+
+
+.selected {
+    outline: 2px solid blue;
+}
+
+/* Style for selected/hovered option */
+li:hover, .selected {
+    outline: 2px solid blue; /* Adjust as per your design */
+}
+
+.container-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 2rem;
+    height: 100%;
+
+}
+
+.progress-container {
+    width: 100%;
+    background-color: var(--primary-light);
+    border-radius: 10px;
+}
+
+.dark-mode .progress-container {
+    background-color: var(--secondary-dark);
+}
+
+.progress-bar {
+    height: 15px;
+    background-color: var(--primary-purple);
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+
+
+

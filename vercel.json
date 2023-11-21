@@ -1,14 +1,26 @@
 {
     "builds": [
       {
-        "src": "quiz_project_django/wsgi.py",
-        "use": "@vercel/python"
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
+        }
+      },
+      {
+        "src": "/quiz_project_django/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb" }
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "django_app_name/wsgi.py"
+        "dest": "quiz_project_django/wsgi.py"
+      },
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
       }
     ]
-}
+  }
