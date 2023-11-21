@@ -37,44 +37,79 @@ These instructions will get you a copy of the project up and running on your loc
 - pip
 - virtualenv (optional)
 
-### Installation
+## Installation
 
-**Clone the repository**
+To set up the Django Quiz App for development, follow these steps:
 
-```
-git clone https://github.com/Sharyd/Django_quiz_app.git
-```
+1. **Clone the repository**
 
-**Set up a virtual environment (recommended)**
+    Open a terminal and run:
 
-```
-python -m venv venv
-source venv/bin/activate  # For Windows use `venv\Scripts\activate`
-```
-**Install dependencies**
+    ```bash
+    git clone https://github.com/Sharyd/Django_quiz_app.git
+    cd Django_quiz_app
+    ```
 
-```
-pip install -r requirements.txt
-```
+2. **Set up a virtual environment (recommended)**
 
-**Apply migrations to create the database schema.**
+    This isolates your project dependencies from other Python projects.
 
-```
-python manage.py migrate
-```
-**Create an admin user**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # For Windows use `venv\Scripts\activate`
+    ```
 
-```
-python manage.py createsuperuser
-```
-**Collect static files**
+3. **Install Django and other dependencies**
 
-```
-python manage.py collectstatic
-```
-**Run the development server**
+    Ensure you have all the required packages including Django itself installed.
 
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    If `requirements.txt` does not specify Django or if you need to install it separately:
+
+    ```bash
+    pip install django
+    ```
+
+4. **Apply migrations**
+
+    Create the database schema based on the Django models defined.
+
+    ```bash
+    python manage.py migrate
+    ```
+
+5. **Create an admin user**
+
+    Set up a superuser account for accessing the Django admin interface.
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+6. **Collect static files**
+
+    Gather all static assets into the directory specified by `STATIC_ROOT` in settings.
+
+    ```bash
+    python manage.py collectstatic
+    ```
+
+7. **Run the development server**
+
+    Start the application on your local machine.
+
+    ```bash
+    python manage.py runserver
+    ```
+
+
+Remember to replace the `SECRET_KEY` in the `settings.py` file with a new generated one for production environments. You can generate a new secret key using the following command in a Python shell:
+python
 ```
-python manage.py runserver
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
 ```
 
