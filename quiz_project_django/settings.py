@@ -30,6 +30,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "djangoquizapp-env.eba-qpf3xv2n.eu-north-1.elasticbeanstalk.com",
     ".vercel.app",
+    "*",
 ]
 
 
