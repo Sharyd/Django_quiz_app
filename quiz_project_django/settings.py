@@ -25,10 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = getenv("SECRET_KEY", "your_secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT", True)
+DEBUG = getenv("IS_DEVELOPMENT", False)
 
 ALLOWED_HOSTS = [
     "*",
+    "localhost",
+    "protected-reaches-84996.herokuapp.com",
 ]
 
 
@@ -85,15 +87,6 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     },
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql",
-    #     "URL": os.getenv("POSTGRES_URL"),
-    #     "NAME": os.getenv("PGNAME"),
-    #     "USER": os.getenv("PGUSER"),
-    #     "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-    #     "HOST": os.getenv("PGHOST"),
-    #     "PORT": os.getenv("PGPORT"),
-    # },
 }
 
 
