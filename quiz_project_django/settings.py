@@ -30,8 +30,7 @@ DEBUG = getenv("IS_DEVELOPMENT", False)
 ALLOWED_HOSTS = [
     "*",
     "localhost",
-    ".vercel.app",
-    "protected-reaches-84996.herokuapp.com",
+    ".vercel.app" "protected-reaches-84996.herokuapp.com",
 ]
 
 

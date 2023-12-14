@@ -1,0 +1,5 @@
+[client]
+database = quiz-app
+user = root
+password = danevac
+default-character-set = utf8
