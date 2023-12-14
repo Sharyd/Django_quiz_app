@@ -2,6 +2,11 @@
 
 This Django Quiz App is a web application that allows users to take quizzes on various topics.
 
+## Production User for Admin UI
+  - url: http://djangoquizapp-env-10.eba-zuszb39k.eu-north-1.elasticbeanstalk.com/admin/
+  - username: TestQuiz
+  - password: test123456*
+
 ## Features
 
   ## Admin UI
@@ -31,4 +36,80 @@ These instructions will get you a copy of the project up and running on your loc
 - Python 3.8+
 - pip
 - virtualenv (optional)
+
+## Installation
+
+To set up the Django Quiz App for development, follow these steps:
+
+1. **Clone the repository**
+
+    Open a terminal and run:
+
+    ```bash
+    git clone https://github.com/Sharyd/Django_quiz_app.git
+    cd Django_quiz_app
+    ```
+
+2. **Set up a virtual environment (recommended)**
+
+    This isolates your project dependencies from other Python projects.
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # For Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install Django and other dependencies**
+
+    Ensure you have all the required packages including Django itself installed.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    If `requirements.txt` does not specify Django or if you need to install it separately:
+
+    ```bash
+    pip install django
+    ```
+
+4. **Apply migrations**
+
+    Create the database schema based on the Django models defined.
+
+    ```bash
+    python manage.py migrate
+    ```
+
+5. **Create an admin user**
+
+    Set up a superuser account for accessing the Django admin interface.
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+6. **Collect static files**
+
+    Gather all static assets into the directory specified by `STATIC_ROOT` in settings.
+
+    ```bash
+    python manage.py collectstatic
+    ```
+
+7. **Run the development server**
+
+    Start the application on your local machine.
+
+    ```bash
+    python manage.py runserver
+    ```
+
+
+Remember to replace the `SECRET_KEY` in the `settings.py` file with a new generated one for production environments. You can generate a new secret key using the following command in a Python shell:
+python
+```
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
+```
 
